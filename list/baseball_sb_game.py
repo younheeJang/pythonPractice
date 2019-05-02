@@ -25,7 +25,9 @@ while count < 3:
     while u_input in user_input:
         print("중복되는 수 입니다. 다시 입력해주세요.")
         u_input = int(input("%s번째 수를 입력하세요: " % count))
-
+    while u_input > 9 or u_input < 0:
+        print("범위를 벗어나는 수입니다. 다시 입력해주세요.")
+        u_input = int(input("%s번째 수를 입력하세요: " % count))
     user_input.append(u_input)
 
 
