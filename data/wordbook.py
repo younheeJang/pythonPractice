@@ -12,7 +12,7 @@ def save_word():
 
     return False
 
-out_file = open('vocabulary.txt', 'w', encoding="utf-8")
+out_file = open('files/vocabulary.txt', 'w', encoding="utf-8")
 
 save_word()
 

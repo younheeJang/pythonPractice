@@ -1,4 +1,4 @@
-file_contains = open('sales_list.txt', 'r', encoding='utf-8')
+file_contains = open('files/sales_list.txt', 'r', encoding='utf-8')
 print(file_contains)
 
 for line in file_contains:

@@ -1,2 +1,0 @@
-write_file.write('i am writing the file yeah')curious jeager
-i am writing the file yeah
