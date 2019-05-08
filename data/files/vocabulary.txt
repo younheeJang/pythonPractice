@@ -1,2 +1,4 @@
-cat: 고양이
 dog: 강아지
+cat: 고양이
+candle: 초
+church: 교회
