@@ -11,5 +11,5 @@ def hanoi(num_disks, start_peg, end_peg):
         move_disk(num_disks, start_peg, end_peg)
         hanoi(num_disks - 1, other_peg, end_peg)
 
-# 10은 마지막기둥*2로. 
+# 10은 마지막기둥*2로.
 hanoi(5, 1, 5)
