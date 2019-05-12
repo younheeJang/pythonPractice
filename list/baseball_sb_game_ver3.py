@@ -52,7 +52,6 @@ def get_result(strike, ball):
 def baseball_3Strik_game():
 
     numbers = get_winning_numbers()
-    print(numbers)
 
     while True:
 
