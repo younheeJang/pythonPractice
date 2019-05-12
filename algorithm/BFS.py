@@ -12,7 +12,7 @@ def bfs(start, goal):
 
 # 파일 읽기
 stations = {}
-in_file = open('data/stations.txt',  encoding='utf-8')
+in_file = open('data/stations.txt', 'r', encoding='utf-8')
 
 # 코드를 입력하세요
 for line in in_file:
