@@ -24,9 +24,26 @@ class Node:
                     self.right.insert(value)
         else:
             self.value = value
-
+    def findOne(self, value):
+        if value < self.value:
+            if self.value is None:
+                return str(value)+" is not Found"
+            return self.left.findOne(value)
+        elif value > self.value:
+            if self.right is None:
+                return str(value)+" is not Found"
+            return self.right.findOne(value)
+        else:
+            return value
 
 root = Node(10)
 root.insert(11)
 root.insert(9)
 root.printAll()
+
+print()
+
+print(root.findOne(9))
+print(root.findOne(11))
+print(root.findOne(99))
+print(root.findOne(10))
