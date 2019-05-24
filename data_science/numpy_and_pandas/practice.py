@@ -1,21 +1,37 @@
+from matplotlib import pyplot as plt
 import pandas as pd
 
-df = pd.read_csv('../data/enrollment_1.csv')
-df['status'] = 'allowed'
-
-# 코드를 작성하세요.
-#step 1 clear: get freshman and put column 'status' not allowed when course name is 'information....."
-bool1 = df['year'] == 1
-bool2 = df['course name'] == 'information technology'
-
-df.loc[bool1 & bool2, 'status'] = 'not allowed'
+df = pd.read_csv('../data/sillicon_valley_detail.csv', index_col='company')
 
 
-#step 2 clear: find spefied course name called 'commerce', and get foutrh man's info, put status 'not allowed'
-bool3 = df['course name'] == 'commerce'
-bool4 = df['year'] == 4
 
-df.loc[bool3 & bool4, 'status'] = 'not allowed'
+bool0 = df['company'] == 'Adobe'
 
-# 정답 출력
-print(df)
+#인원이 0인 직군은 뺀다.
+bool1 = df['count'] == 0
+
+forChart = df[~bool1 & bool0]
+print(forChart)
+
+#한 회사만 차트에 반영할 것이므로 필요 로우만 추리기
+
+#forChart = forChart.loc['Adobe']
+
+
+#label로 설정할 컬럼 중 필요없는 항목을 걸러내기 위해 조건을 설정하기.
+bool2 = (forChart['job_category'] != 'Totals') & (forChart['job_category'] != 'Previous_totals')
+
+forChart = forChart[bool2]
+
+
+#걸러낸 항목 중 인종별로 토털을 기록한 항목이 있음. 걸러냄.
+
+forChart = forChart[forChart['race'] == 'Overall_totals']
+
+#필요없는 컬럼은 지운다.
+forChart = forChart.drop(['race', 'gender', 'year'], axis=1)
+
+
+
+#걸러낸 데이터 프레임을 활용해 차트를 그림
+#forChart.plot(kind='pie', labels=forChart['job_category'], y='count')
