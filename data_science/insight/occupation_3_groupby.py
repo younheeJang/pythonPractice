@@ -24,5 +24,7 @@ df['gender'] = df['gender'].astype(int)
 print(df)
 grouping = df.groupby('occupation')
 
+result = grouping.mean().sort_values(by='gender', ascending=False)
 #직업별로 그루핑한 데이터 프레임 그룹을, 젠더라는 컬럼을 중심으로 솔팅한다.
-print(grouping.mean().sort_values(by='gender', ascending=False))
+print(type(result))
+print(result.gender)
