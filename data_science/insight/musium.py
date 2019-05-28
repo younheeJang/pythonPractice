@@ -17,11 +17,11 @@ print(df)
 
 for i, r in df.iterrows():
     if r['분류'] == True:
-        print(r['시설명'])
-        df.at[i, '분류'] = '대학'
-    else:
+        df.loc[i, '분류'] = '대학'
         print(r['분류'])
-        df.at[i, '분류'] = '일반'
+    else:
+        df.loc[i, '분류'] = '일반'
+        print(i)
 
 
 print(df)

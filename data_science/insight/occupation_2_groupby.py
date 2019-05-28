@@ -8,10 +8,9 @@ df = pd.read_csv('../data/occupations_2.csv')
 #컬럼 뽑기
 print(df)
 #df.sort_values('age', ascending=False).groupby('occupation').head(3)
-print(df.sort_values('age'))
-age = df.sort_values('age')
 
-grouping = age.groupby('occupation')
+grouping = df.groupby('occupation')
 
-print(grouping.mean())
-#print(type(grouping))
+print(grouping.mean().sort_values(by='age'))
+print(type(grouping))
+print(grouping['age'])
