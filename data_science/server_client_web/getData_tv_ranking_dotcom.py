@@ -48,7 +48,7 @@ for i in urlList:
 
 #rating_pages = requests.get('https://workey.codeit.kr/ratings/index')
 
-
+print(rating_pages)
 #print(rating_pages[0])
 
 
