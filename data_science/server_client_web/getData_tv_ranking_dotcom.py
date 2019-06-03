@@ -35,6 +35,7 @@ for i in urlList:
     try:
         response = requests.get(i)
         rating_pages = response.text
+        data_list.append(rating_pages)
 
         # If the response was successful, no Exception will be raised
         response.raise_for_status()
@@ -46,9 +47,6 @@ for i in urlList:
     else:
         print('Success!')
 
-#rating_pages = requests.get('https://workey.codeit.kr/ratings/index')
 
-print(rating_pages)
-#print(rating_pages[0])
-
-
+print(len(data_list)) # 가져온 총 페이지 수
+print(data_list) # 첫 번째 페이지의 HTML 코드
